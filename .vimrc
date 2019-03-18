@@ -39,7 +39,7 @@ set hidden
 "Hightlight matching brackets
 set showmatch
 "Show tabs
-set list lcs=tab:>-,space:⋅
+set list lcs=space:⋅
 autocmd BufWinLeave * call clearmatches()
 set cursorline
 autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
@@ -160,11 +160,20 @@ let g:gruvbox_italic=0
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'medium'
 set background=dark
-let g:airline_theme = 'gruvbox'
+"let g:airline_theme = 'gruvbox'
 "let g:gruvbox_termcolors=16
 
-filetype plugin indent on
+"airline
+let g:airline#extensions#tabline#enabled = 1
+function! MyLineNumber()
+  return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g'). ' | '.
+    \    substitute(line('$'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g')
+endfunction
 
+call airline#parts#define('linenr', {'function': 'MyLineNumber', 'accents': 'bold'})
+let g:airline_section_z = airline#section#create(['%3p%%: ', 'linenr', ':%3v'])
+
+filetype plugin indent on
 
 " show existing tab with 2 spaces width
 set tabstop=2
@@ -172,5 +181,14 @@ set tabstop=2
 set shiftwidth=2
 " On pressing tab, insert 2 spaces
 set expandtab
+
+" airline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_readonly = ''
+let g:airline_linenr = ''
 
 
