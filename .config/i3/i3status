@@ -27,7 +27,7 @@ order += "tztime local"
 wireless _first_ {
         format_up = "WiFi %essid%quality %ip "
         format_down = "No WiFi"
-        color_good = "#d79921"
+        color_good = "#A2AFBC"
         color_bad = "#777777"
 }
 
@@ -81,11 +81,11 @@ tztime local {
 }
 
 load {
-        format = "MEM %1min "
+        format = "RAM %1min "
 }
 
 disk "/" {
-        format = "DSK %avail "
+        format = "SSD %avail "
 }
 
 cpu_usage {

@@ -117,6 +117,10 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Media Control Keys (F1-F12)
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -155,11 +159,11 @@ exec xrandr --dpi 180
 
 #Touchpad config 'xinput set prop <device-id> <property-id> <value>'
 #Enable tap-to-click
-exec xinput set-prop 11 277 1
+exec xinput set-prop 11 281 1
 #Enable natural scrolling
-exec xinput set-prop 11 285 1
+exec xinput set-prop 11 289 1
 #Increasing touchpad range
-exec xinput set-float-prop 11 297 0.900000
+exec xinput set-float-prop 11 301 0.200000
 
 hide_edge_borders both
 
@@ -171,13 +175,13 @@ new_window 1pixel
 #THEME#
 #######
 #set common background
-exec xsetroot -solid '#202020'
+exec xsetroot -solid '#20262B'
 
 # set primary gruvbox colorscheme colors
-set $bg #202020
+set $bg #20262B
 set $red #cc241d
 set $green #98971a
-set $yellow #d79921
+set $yellow #A2AFBC
 set $blue #458588
 set $purple #b16286
 set $aqua #689d68
@@ -204,7 +208,7 @@ bar {
         #                    border  backgr. text
         focused_workspace    $bg $bg $aqua
         inactive_workspace   $bg $bg $yellow
-        active_workspace     $darkgray $darkgray $yellow
+        active_workspace     $bg $darkgray $yellow
         urgent_workspace     $red $red $bg
     }
 }

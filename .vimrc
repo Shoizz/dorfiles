@@ -19,7 +19,6 @@ call plug#begin('~/.vim/plugged')
   "plugin for TypeScript
   Plug 'Quramy/tsuquyomi'
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-  Plug 'morhetz/gruvbox'
   Plug 'airblade/vim-gitgutter'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -41,9 +40,11 @@ set showmatch
 "Show tabs
 set list lcs=space:⋅
 autocmd BufWinLeave * call clearmatches()
+
 set cursorline
-autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
-autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
+"autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
+"autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
+
 "Enable mouse
 set mouse=a
 "Tab shift back
@@ -156,14 +157,11 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 "Theme config
-let g:gruvbox_italic=0
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'medium'
-set background=dark
-"let g:airline_theme = 'gruvbox'
-"let g:gruvbox_termcolors=16
+set t_Co=256
+colorscheme iceberg
 
 "airline
+let g:airline_theme='atomic'
 let g:airline#extensions#tabline#enabled = 1
 function! MyLineNumber()
   return substitute(line('.'), '\d\@<=\(\(\d\{3\}\)\+\)$', ',&', 'g'). ' | '.
