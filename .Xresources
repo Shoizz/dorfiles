@@ -1,6 +1,6 @@
 Xft.dpi: 180
-#Xcursor.theme: cz-Viator_Black
-#Xcursor.size: 32
+Xcursor.theme: DMZ-Black
+Xcursor.size: 32
 
 ! special
 *.foreground:   #d2d4de
