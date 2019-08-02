@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'bling/vim-airline'
   Plug 'cocopon/iceberg.vim'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
   Plug 'mattn/emmet-vim'
   Plug 'tpope/vim-surround'
   Plug 'enricobacis/vim-airline-clock'
@@ -11,26 +12,55 @@ call plug#begin('~/.local/share/nvim/plugged')
   "navigate search results
   Plug 'tpope/vim-fugitive'
 
+  "asynchronous execution library for Vim
+  Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
   "Serching files
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 
   Plug 'airblade/vim-gitgutter'
   Plug 'godlygeek/tabular'
+
+  "Plug 'Quramy/tsuquyomi'
+  Plug 'Valloric/YouCompleteMe'
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/vim-js-pretty-template'
+
+
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'Yggdroot/indentLine'
+
+  "Supported features are Go to Definition, Quick Info, Signature Help, Show
+  "Compile Errors, Symbol Rename and Show References
+  "Plug 'runoshun/tscompletejob'
 call plug#end()
 
 """""""""""""
 " Shortcuts "
 """""""""""""
 nmap <C-n> :NERDTreeToggle<CR>
+
+"runoshun/tscompletejob
+nmap <C-d> :TsCompleteJobGotoDefinition <CR>
+nmap <C-f> :TsCompleteJobQuickInfo <CR>
+
 "Moving lines up and down
 map <silent> <C-j> :m-2<CR>
 map <silent> <C-k> :m+<CR>
+
+"Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+"Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
 
 """"""""""""""""
 " Theme config "
@@ -58,7 +88,7 @@ set cursorline
 autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
 autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
 "Enable mouse
-"set mouse=a
+set mouse=a
 "Tab shift back
 imap <S-tab> <C-d>
 "Fxing backspace for mac
@@ -74,6 +104,10 @@ set tabstop=2
 set softtabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
+
+"""""""""""""""""""""""""""
+" runoshun/tscompletejob' "
+"""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""
 " Quramy/vim-js-pretty-template "
@@ -97,7 +131,7 @@ map <silent><C-x> :GitGutterUndoHunk <bar> :pclose <CR>
 """""""""""""""""""""""""""""""""
 " enricobacis/vim-airline-clock "
 """""""""""""""""""""""""""""""""
-let g:airline#extensions#clock#format = '| %H:%M'
+let g:airline#extensions#clock#format = '⎸ %H:%M'
 
 """"""""""""""""""""""""""""""
 " leafgarland/typescript-vim "
@@ -115,6 +149,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "to highlight conceal color with your colorscheme, disable by:
 "let g:indentLine_setColors = 0
 let g:indentLine_color_term = 105
+let g:indentLine_char = '¦'
 " Background (Vim, GVim)
 "let g:indentLine_bgcolor_term = 202
 "let g:indentLine_bgcolor_gui = '#FF5F00'
