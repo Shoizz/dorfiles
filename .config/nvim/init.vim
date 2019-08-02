@@ -8,9 +8,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'enricobacis/vim-airline-clock'
 
-  "Use :Ggrep <...> to search for words and :cnext :cprevious to
-  "navigate search results
+  "Git
   Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 
   "asynchronous execution library for Vim
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -19,7 +19,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 
-  Plug 'airblade/vim-gitgutter'
   Plug 'godlygeek/tabular'
 
   "Plug 'Quramy/tsuquyomi'
@@ -41,8 +40,11 @@ call plug#end()
 " Hints "
 """""""""
 " 1. Search and replace
-  " To serch and replace use :%s/wordtosearch/wordtoreplace/gc
-  " To search and replace multiple occurrences use :%s/Kang\\|Kodos/alien/gc
+  " – To serch and replace use :%s/wordtosearch/wordtoreplace/gc
+  " – To search and replace multiple occurrences use :%s/Kang\\|Kodos/alien/gc
+
+" 2. Search symbol occurrence
+  " Use :Ggrep <...> to search for words and :cnext :cprevious to navigate search results
 
 """""""""""""
 " Shortcuts "
