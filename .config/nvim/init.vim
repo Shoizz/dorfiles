@@ -70,7 +70,8 @@ colorscheme iceberg
 """""""""""""""""
 " Common config "
 """""""""""""""""
-" More frequent updates for, e.g. signs.
+" More frequent updates for, e.g. signs. If not updating - set manually to
+" lower value e.g. :set updatetime = N-100
 set updatetime=300
 
 set nospell
@@ -78,33 +79,46 @@ set number
 set numberwidth=2
 syntax on
 set ruler
+
 "Auto remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
+
 "Set edited buffers that aren't visible in a window somewhere
 set hidden
+
 "Hightlight matching brackets
 set showmatch
+
 "Show tabs
 set list lcs=tab:––,space:·
+
 autocmd BufWinLeave * call clearmatches()
 set cursorline
 autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
 autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
+
 "Enable mouse
 set mouse=a
+
 "Tab shift back
 imap <S-tab> <C-d>
+
 "Fxing backspace for mac
 set backspace=2
+
 " Change style of highlighting
 hi clear SpellBad
 hi SpellBad cterm=underline
+
 filetype plugin indent on
+
 " On pressing tab, insert 2 spaces
 set expandtab
+
 " show existing tab with 2 spaces width
 set tabstop=2
 set softtabstop=2
+
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
 
@@ -131,10 +145,15 @@ autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vi
 """"""""""""""""""""""""""""
 "Preview hunk in Gitgutter
 "nmap <Leader>hv <Plug>GitGutterPreviewHunk
+
 "Show partial diff
 map <silent><C-o> :GitGutterPreviewHunk <CR>
+
 "Undo and hide partial diff
 map <silent><C-x> :GitGutterUndoHunk <bar> :pclose <CR>
+
+" Update git signs on save
+autocmd BufWritePost * GitGutter
 
 """""""""""""""""""""""""""""""""
 " enricobacis/vim-airline-clock "
