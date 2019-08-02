@@ -31,9 +31,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'Yggdroot/indentLine'
 
-  "Supported features are Go to Definition, Quick Info, Signature Help, Show
-  "Compile Errors, Symbol Rename and Show References
-  "Plug 'runoshun/tscompletejob'
 call plug#end()
 
 """""""""
