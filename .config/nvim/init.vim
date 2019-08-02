@@ -71,7 +71,7 @@ colorscheme iceberg
 " Common config "
 """""""""""""""""
 " More frequent updates for, e.g. signs.
-set updatetime=750
+set updatetime=300
 
 set nospell
 set number
