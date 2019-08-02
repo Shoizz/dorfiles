@@ -104,8 +104,7 @@ set cursorline
 autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
 autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
 
-"Enable mouse
-"nmap <C-m> :set mouse="" <CR>
+"Toggle mouse
 nnoremap <C-m> :call FoldColumnToggle()<cr>
 let g:togglemouse=1
 set mouse=""
