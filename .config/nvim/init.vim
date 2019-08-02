@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   "Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 
   "asynchronous execution library for Vim
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -27,8 +28,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/vim-js-pretty-template'
 
-
-  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'Yggdroot/indentLine'
 
 call plug#end()
