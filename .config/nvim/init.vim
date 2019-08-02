@@ -70,6 +70,9 @@ colorscheme iceberg
 """""""""""""""""
 " Common config "
 """""""""""""""""
+" More frequent updates for, e.g. signs.
+set updatetime=750
+
 set nospell
 set number
 set numberwidth=2
@@ -108,6 +111,11 @@ set shiftwidth=2
 """""""""""""""""""""""""""
 " runoshun/tscompletejob' "
 """""""""""""""""""""""""""
+
+""""""""""""""""""""""""""
+" Valloric/YouCompleteMe "
+""""""""""""""""""""""""""
+set completeopt-=preview
 
 """""""""""""""""""""""""""""""""
 " Quramy/vim-js-pretty-template "
