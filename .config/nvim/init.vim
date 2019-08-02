@@ -37,14 +37,21 @@ call plug#begin('~/.local/share/nvim/plugged')
   "Plug 'runoshun/tscompletejob'
 call plug#end()
 
+"""""""""
+" Hints "
+"""""""""
+" 1. Search and replace
+  " To serch and replace use :%s/wordtosearch/wordtoreplace/gc
+  " To search and replace multiple occurrences use :%s/Kang\\|Kodos/alien/gc
+
 """""""""""""
 " Shortcuts "
 """""""""""""
 nmap <C-n> :NERDTreeToggle<CR>
 
 "runoshun/tscompletejob
-nmap <C-d> :TsCompleteJobGotoDefinition <CR>
-nmap <C-f> :TsCompleteJobQuickInfo <CR>
+nmap <C-d> :YcmCompleter GoToDefinition <CR>
+nmap <C-f> :YcmCompleter GoToReferences <CR>
 
 "Moving lines up and down
 map <silent> <C-j> :m-2<CR>
@@ -98,7 +105,22 @@ autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
 autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
 
 "Enable mouse
-set mouse=a
+"nmap <C-m> :set mouse="" <CR>
+nnoremap <C-m> :call FoldColumnToggle()<cr>
+let g:togglemouse=1
+set mouse=""
+
+function! FoldColumnToggle()
+    if g:togglemouse
+        set mouse=""
+        let g:togglemouse=0
+        echo "Mouse disabled"
+    else
+        set mouse=a
+        let g:togglemouse=1
+        echo "Mouse enabled"
+    endif
+endfunction
 
 "Tab shift back
 imap <S-tab> <C-d>
@@ -158,7 +180,7 @@ autocmd BufWritePost * GitGutter
 """""""""""""""""""""""""""""""""
 " enricobacis/vim-airline-clock "
 """""""""""""""""""""""""""""""""
-let g:airline#extensions#clock#format = '⎸ %H:%M'
+let g:airline#extensions#clock#format = '┆ %H:%M'
 
 """"""""""""""""""""""""""""""
 " leafgarland/typescript-vim "
