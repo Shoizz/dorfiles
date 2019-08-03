@@ -5,3 +5,4 @@
 !.gitignore
 !init.vim
 !.local/share/nvim/plugged/iceberg.vim/colors/iceberg.vim
+!.local/share/nvim/plugged/iceberg.vim/autoload/airline/themes/iceberg.vim
