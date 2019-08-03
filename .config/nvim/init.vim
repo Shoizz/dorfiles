@@ -45,6 +45,11 @@ call plug#end()
 """""""""""""
 " Shortcuts "
 """""""""""""
+
+" Tab shift back
+imap <S-tab> <C-d>
+
+" Toggle NerdTree
 nmap <C-n> :NERDTreeToggle<CR>
 
 " Toggle mouse
@@ -124,9 +129,6 @@ function! FoldColumnToggle()
         echo "Mouse enabled"
     endif
 endfunction
-
-" Tab shift back
-imap <S-tab> <C-d>
 
 " Fxing backspace for mac
 set backspace=2
