@@ -4,4 +4,4 @@
 # But not these files...
 !.gitignore
 !init.vim
-!iceberg.vim
+!.local/share/nvim/plugged/iceberg.vim/colors/iceberg.vim
