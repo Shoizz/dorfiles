@@ -61,6 +61,12 @@ nmap <C-a> :call FoldColumnToggle()<cr>
 nmap <C-d> :YcmCompleter GoToDefinition <CR>
 nmap <C-f> :YcmCompleter GoToReferences <CR>
 
+" airblade/vim-gitgutter
+" Show partial diff
+map <silent><C-o> :GitGutterPreviewHunk <CR>
+" Undo and hide partial diff
+map <silent><C-x> :GitGutterUndoHunk <bar> :pclose <CR>
+
 " Moving lines up and down
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
@@ -112,14 +118,15 @@ set showmatch
 set list lcs=tab:––,space:·
 
 autocmd BufWinLeave * call clearmatches()
+
+" Enable cursor
 set cursorline
-autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
-autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
+"autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
+"autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
 
 " Toggle mouse
 let g:togglemouse=1
 set mouse=""
-
 function! FoldColumnToggle()
     if g:togglemouse
         set mouse=""
@@ -172,12 +179,6 @@ autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vi
 "Preview hunk in Gitgutter
 "nmap <Leader>hv <Plug>GitGutterPreviewHunk
 
-"Show partial diff
-map <silent><C-o> :GitGutterPreviewHunk <CR>
-
-"Undo and hide partial diff
-map <silent><C-x> :GitGutterUndoHunk <bar> :pclose <CR>
-
 " Update git signs on save
 autocmd BufWritePost * GitGutter
 
@@ -201,8 +202,8 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "indentLine will overwrite 'conceal' color with grey by default. If you want
 "to highlight conceal color with your colorscheme, disable by:
 "let g:indentLine_setColors = 0
-let g:indentLine_color_term = 105
-let g:indentLine_char = '¦'
+let g:indentLine_color_term = 8
+let g:indentLine_char = '⋮'
 " Background (Vim, GVim)
 "let g:indentLine_bgcolor_term = 202
 "let g:indentLine_bgcolor_gui = '#FF5F00'

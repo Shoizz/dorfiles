@@ -26,14 +26,14 @@ endif
 let g:colors_name = 'iceberg'
 
 
-"hi! ColorColumn cterm=NONE ctermbg=235 guibg=#1e2132
-"hi! CursorColumn cterm=NONE ctermbg=235 guibg=#1e2132
-hi! CursorLine cterm=NONE ctermbg=235 guibg=#1e2132
-hi! Comment ctermfg=242 guifg=#6b7089
-hi! Constant ctermfg=140 guifg=#a093c7
-hi! Cursor ctermbg=252 ctermfg=234 guibg=#c6c8d1 guifg=#161821
-hi! CursorLineNr ctermbg=237 ctermfg=253 guibg=#2a3158 guifg=#cdd1e6
-hi! Delimiter ctermfg=252 guifg=#c6c8d1
+"hi! ColorColumn cterm=NONE ctermbg=235
+"hi! CursorColumn cterm=NONE ctermbg=235
+"hi! CursorLine cterm=NONE ctermbg=235
+hi! Comment ctermfg=8
+hi! Constant ctermfg=140
+"hi! Cursor ctermbg=7 ctermfg=1
+hi! CursorLineNr ctermfg=253
+hi! Delimiter ctermfg=252
 hi! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
 hi! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
 hi! DiffDelete ctermbg=95 ctermfg=224 guibg=#53343b guifg=#ceb0b6
@@ -62,7 +62,7 @@ hi! PmenuThumb ctermbg=251 guibg=#c6c8d1
 hi! PreProc ctermfg=150 guifg=#b4be82
 hi! Question ctermfg=150 guifg=#b4be82
 hi! QuickFixLine ctermbg=236 ctermfg=252 guibg=#272c42 guifg=#c6c8d1
-hi! Search ctermbg=216 ctermfg=234 guibg=#e4aa80 guifg=#392313
+"hi! Search ctermbg=216 ctermfg=234 guibg=#e4aa80 guifg=#392313
 hi! SignColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
 hi! Special ctermfg=150 guifg=#b4be82
 hi! SpellBad ctermbg=95 ctermfg=252 gui=undercurl guisp=#e27878
