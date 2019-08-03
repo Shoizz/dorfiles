@@ -28,6 +28,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/vim-js-pretty-template'
 
+  "Color highlight in CSS
+  Plug 'chrisbra/Colorizer'
+
   Plug 'Yggdroot/indentLine'
 
 call plug#end()
@@ -45,7 +48,6 @@ call plug#end()
 """""""""""""
 " Shortcuts "
 """""""""""""
-
 " Tab shift back
 imap <S-tab> <C-d>
 
@@ -142,20 +144,17 @@ filetype plugin indent on
 " On pressing tab, insert 2 spaces
 set expandtab
 
-" show existing tab with 2 spaces width
+" Show existing tab with 2 spaces width
 set tabstop=2
 set softtabstop=2
 
-" when indenting with '>', use 2 spaces width
+" When indenting with '>', use 2 spaces width
 set shiftwidth=2
-
-"""""""""""""""""""""""""""
-" runoshun/tscompletejob' "
-"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""
 " Valloric/YouCompleteMe "
 """"""""""""""""""""""""""
+" Disable doc preview
 set completeopt-=preview
 
 """""""""""""""""""""""""""""""""
