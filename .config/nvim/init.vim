@@ -47,21 +47,30 @@ call plug#end()
 """""""""""""
 nmap <C-n> :NERDTreeToggle<CR>
 
-"runoshun/tscompletejob
+" Toggle mouse
+nmap <C-a> :call FoldColumnToggle()<cr>
+
+" runoshun/tscompletejob
 nmap <C-d> :YcmCompleter GoToDefinition <CR>
 nmap <C-f> :YcmCompleter GoToReferences <CR>
 
-"Moving lines up and down
-map <silent> <C-j> :m-2<CR>
-map <silent> <C-k> :m+<CR>
+" Moving lines up and down
+"map <silent> <C-j> :m-2<CR>
+"map <silent> <C-k> :m+<CR>
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
-"Copy to clipboard
+" Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
 nnoremap  <leader>y  "+y
 nnoremap  <leader>yy  "+yy
 
-"Paste from clipboard
+" Paste from clipboard
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
@@ -85,16 +94,16 @@ set numberwidth=2
 syntax on
 set ruler
 
-"Auto remove trailing whitespaces
+" Auto remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
-"Set edited buffers that aren't visible in a window somewhere
+" Set edited buffers that aren't visible in a window somewhere
 set hidden
 
-"Hightlight matching brackets
+" Hightlight matching brackets
 set showmatch
 
-"Show tabs
+" Show tabs
 set list lcs=tab:––,space:·
 
 autocmd BufWinLeave * call clearmatches()
@@ -102,8 +111,7 @@ set cursorline
 autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
 autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
 
-"Toggle mouse
-nmap <C-a> :call FoldColumnToggle()<cr>
+" Toggle mouse
 let g:togglemouse=1
 set mouse=""
 
@@ -119,10 +127,10 @@ function! FoldColumnToggle()
     endif
 endfunction
 
-"Tab shift back
+" Tab shift back
 imap <S-tab> <C-d>
 
-"Fxing backspace for mac
+" Fxing backspace for mac
 set backspace=2
 
 " Change style of highlighting
