@@ -50,7 +50,7 @@ hi! FoldColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
 hi! Function ctermfg=110 guifg=#84a0c6
 hi! Identifier cterm=NONE ctermfg=109 guifg=#89b8c2
 hi! Include ctermfg=110 guifg=#84a0c6
-hi! LineNr ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
+hi! LineNr ctermfg=060 guibg=#1e2132 guifg=#444b71
 hi! MatchParen ctermbg=237 ctermfg=255 guibg=#3e445e guifg=#ffffff
 hi! MoreMsg ctermfg=150 guifg=#b4be82
 "hi! Normal ctermbg=234 ctermfg=252 guibg=#161821 guifg=#c6c8d1
@@ -98,10 +98,10 @@ hi! EasyMotionShade ctermfg=239 guifg=#3d425b
 hi! EasyMotionTarget ctermfg=150 guifg=#b4be82
 hi! EasyMotionTarget2First ctermfg=216 guifg=#e2a478
 hi! EasyMotionTarget2Second ctermfg=216 guifg=#e2a478
-hi! GitGutterAdd ctermbg=235 ctermfg=150 guibg=#1e2132 guifg=#b4be82
-hi! GitGutterChange ctermbg=235 ctermfg=109 guibg=#1e2132 guifg=#89b8c2
-hi! GitGutterChangeDelete ctermbg=235 ctermfg=109 guibg=#1e2132 guifg=#89b8c2
-hi! GitGutterDelete ctermbg=235 ctermfg=203 guibg=#1e2132 guifg=#e27878
+hi! GitGutterAdd ctermfg=150 guibg=#1e2132 guifg=#b4be82
+hi! GitGutterChange ctermfg=109 guibg=#1e2132 guifg=#89b8c2
+hi! GitGutterChangeDelete ctermfg=109 guibg=#1e2132 guifg=#89b8c2
+hi! GitGutterDelete ctermfg=203 guibg=#1e2132 guifg=#e27878
 hi! gitmessengerEndOfBuffer ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
 hi! gitmessengerPopupNormal ctermbg=235 ctermfg=252 guibg=#1e2132 guifg=#c6c8d1
 hi! Sneak ctermbg=140 ctermfg=234 guibg=#a093c7 guifg=#161821
