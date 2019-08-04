@@ -1,16 +1,6 @@
-" _________________________________________
-" \_ _/ ____| ____| ___ \ ____| ___ \  ___/
-"  | | |____| ____| ___ < ____| __  / |__ \
-" /___\_____|_____|_____/_____|_| \_\_____/
-"
-"  cool-headed perspective for your coding
-"
-"
-" File:       iceberg.vim
-" Maintainer: cocopon <cocopon@me.com>
-" Modified:   2019-07-19 09:22+0900
-" License:    MIT
-
+" ICEBERG MINIMAL
+" Maintainer: shoizz <https://github.com/Shoizz>
+" Original work by: cocopon <cocopon@me.com>
 
 if !has('gui_running') && &t_Co < 256
   finish
@@ -26,9 +16,9 @@ endif
 let g:colors_name = 'iceberg'
 
 
-"hi! ColorColumn cterm=NONE ctermbg=235
-"hi! CursorColumn cterm=NONE ctermbg=235
-"hi! CursorLine cterm=NONE ctermbg=235
+hi! ColorColumn cterm=NONE ctermbg=235
+hi! CursorColumn cterm=NONE ctermbg=235
+"hi! CursorLine cterm=NONE ctermbg=0
 hi! Comment ctermfg=8
 hi! Constant ctermfg=140
 "hi! Cursor ctermbg=7 ctermfg=1
@@ -51,7 +41,7 @@ hi! Function ctermfg=110 guifg=#84a0c6
 hi! Identifier cterm=NONE ctermfg=109 guifg=#89b8c2
 hi! Include ctermfg=110 guifg=#84a0c6
 hi! LineNr ctermfg=060 guibg=#1e2132 guifg=#444b71
-hi! MatchParen ctermbg=237 ctermfg=255 guibg=#3e445e guifg=#ffffff
+"hi! MatchParen ctermbg=237 ctermfg=255 guibg=#3e445e guifg=#ffffff
 hi! MoreMsg ctermfg=150 guifg=#b4be82
 "hi! Normal ctermbg=234 ctermfg=252 guibg=#161821 guifg=#c6c8d1
 hi! Operator ctermfg=110 guifg=#84a0c6
@@ -61,8 +51,9 @@ hi! PmenuSel ctermbg=240 ctermfg=255 guibg=#5b6389 guifg=#eff0f4
 hi! PmenuThumb ctermbg=251 guibg=#c6c8d1
 hi! PreProc ctermfg=150 guifg=#b4be82
 hi! Question ctermfg=150 guifg=#b4be82
-hi! QuickFixLine ctermbg=236 ctermfg=252 guibg=#272c42 guifg=#c6c8d1
-"hi! Search ctermbg=216 ctermfg=234 guibg=#e4aa80 guifg=#392313
+"Selection colors for Quickfix window
+hi! QuickFixLine ctermbg=60 ctermfg=7
+hi! Search ctermfg=6 ctermbg=0
 hi! SignColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
 hi! Special ctermfg=150 guifg=#b4be82
 hi! SpellBad ctermbg=95 ctermfg=252 gui=undercurl guisp=#e27878
@@ -70,10 +61,10 @@ hi! SpellCap ctermbg=24 ctermfg=252 gui=undercurl guisp=#84a0c6
 hi! SpellLocal ctermbg=23 ctermfg=252 gui=undercurl guisp=#89b8c2
 hi! SpellRare ctermbg=97 ctermfg=252 gui=undercurl guisp=#a093c7
 hi! Statement ctermfg=110 gui=NONE guifg=#84a0c6
-"hi! StatusLine cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596 term=reverse
-"hi! StatusLineTerm cterm=reverse ctermbg=234 ctermfg=245 gui=reverse guibg=#17171b guifg=#818596 term=reverse
-"hi! StatusLineNC cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=#3e445e guifg=#0f1117
-"hi! StatusLineTermNC cterm=reverse ctermbg=238 ctermfg=233 gui=reverse guibg=#3e445e guifg=#0f1117
+"hi! StatusLine cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
+"hi! StatusLineTerm cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
+"hi! StatusLineNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
+"hi! StatusLineTermNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
 hi! StorageClass ctermfg=110 guifg=#84a0c6
 hi! String ctermfg=109 guifg=#89b8c2
 hi! Structure ctermfg=110 guifg=#84a0c6
@@ -198,7 +189,7 @@ hi! link markdownRule Comment
 hi! link ngxDirective Statement
 hi! link plug1 Normal
 hi! link plug2 Identifier
-hi! link plugDash Comment
+hi! link plugDash Special
 hi! link plugMessage Special
 hi! link SignifySignAdd GitGutterAdd
 hi! link SignifySignChange GitGutterChange

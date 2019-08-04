@@ -8,15 +8,15 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'enricobacis/vim-airline-clock'
 
-  "Git
+  " Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'Xuyuanp/nerdtree-git-plugin'
 
-  "asynchronous execution library for Vim
+  " asynchronous execution library for Vim
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
-  "Serching files
+  " Serching files
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 
@@ -28,10 +28,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/vim-js-pretty-template'
 
-  "Color highlight in CSS
+  " Color highlight in CSS
   Plug 'chrisbra/Colorizer'
 
-  Plug 'Yggdroot/indentLine'
+  " Line indentation
+  Plug 'nathanaelkane/vim-indent-guides'
+  "Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -121,8 +123,6 @@ autocmd BufWinLeave * call clearmatches()
 
 " Enable cursor
 set cursorline
-"autocmd InsertEnter * highlight CursorLine guibg=#000050 guifg=fg
-"autocmd InsertLeave * highlight CursorLine guibg=#004000 guifg=fg
 
 " Toggle mouse
 let g:togglemouse=1
@@ -202,11 +202,19 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "indentLine will overwrite 'conceal' color with grey by default. If you want
 "to highlight conceal color with your colorscheme, disable by:
 "let g:indentLine_setColors = 0
-let g:indentLine_color_term = 8
-let g:indentLine_char = '⋮'
+"let g:indentLine_color_term = 8
+"let g:indentLine_char = '⋮'
 " Background (Vim, GVim)
 "let g:indentLine_bgcolor_term = 202
 "let g:indentLine_bgcolor_gui = '#FF5F00'
+
+"""""""""""""""""""""""""""""""""""
+" nathanaelkane/vim-indent-guides "
+"""""""""""""""""""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0 ctermfg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=8
 
 """""""""""""""""""""""
 " scrooloose/nerdTree "
