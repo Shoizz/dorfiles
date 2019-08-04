@@ -38,3 +38,5 @@ Xcursor.size: 32
 ! white
 *.color7:       #c6c8d1
 *.color15:      #d2d4de
+
+URxvt*font: xft:Terminus:size=10
