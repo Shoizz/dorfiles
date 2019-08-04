@@ -15,7 +15,6 @@ endif
 
 let g:colors_name = 'iceberg'
 
-
 hi! ColorColumn cterm=NONE ctermbg=235
 hi! CursorColumn cterm=NONE ctermbg=235
 "hi! CursorLine cterm=NONE ctermbg=0
@@ -51,7 +50,7 @@ hi! PmenuSel ctermbg=240 ctermfg=255 guibg=#5b6389 guifg=#eff0f4
 hi! PmenuThumb ctermbg=251 guibg=#c6c8d1
 hi! PreProc ctermfg=150 guifg=#b4be82
 hi! Question ctermfg=150 guifg=#b4be82
-"Selection colors for Quickfix window
+" Selection colors for Quickfix window
 hi! QuickFixLine ctermbg=60 ctermfg=7
 hi! Search ctermfg=6 ctermbg=0
 hi! SignColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
@@ -61,10 +60,10 @@ hi! SpellCap ctermbg=24 ctermfg=252 gui=undercurl guisp=#84a0c6
 hi! SpellLocal ctermbg=23 ctermfg=252 gui=undercurl guisp=#89b8c2
 hi! SpellRare ctermbg=97 ctermfg=252 gui=undercurl guisp=#a093c7
 hi! Statement ctermfg=110 gui=NONE guifg=#84a0c6
-"hi! StatusLine cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
-"hi! StatusLineTerm cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
-"hi! StatusLineNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
-"hi! StatusLineTermNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
+hi! StatusLine cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
+hi! StatusLineTerm cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
+hi! StatusLineNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
+hi! StatusLineTermNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
 hi! StorageClass ctermfg=110 guifg=#84a0c6
 hi! String ctermfg=109 guifg=#89b8c2
 hi! Structure ctermfg=110 guifg=#84a0c6
@@ -103,6 +102,9 @@ hi! SyntasticStyleWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a47
 hi! SyntasticWarningSign ctermbg=235 ctermfg=216 guibg=#1e2132 guifg=#e2a478
 hi! ZenSpace ctermbg=203 guibg=#e27878
 hi! icebergALAccentRed ctermfg=203 guifg=#e27878
+hi! Pmenu ctermbg=0 ctermfg=7
+hi! PmenuSel ctermbg=60 ctermfg=7
+hi! MatchParen cterm=none ctermbg=60 ctermfg=7
 
 hi! link cssBraces Delimiter
 hi! link cssClassName Special
@@ -238,3 +240,8 @@ if has('nvim')
 else
   let g:terminal_ansi_colors = ['#1e2132', '#e27878', '#b4be82', '#e2a478', '#84a0c6', '#a093c7', '#89b8c2', '#c6c8d1', '#6b7089', '#e98989', '#c0ca8e', '#e9b189', '#91acd1', '#ada0d3', '#95c4ce', '#d2d4de']
 endif
+
+" FZF
+let g:fzf_colors = {
+\ "bg+":     ["bg", "QuickFixLine"]
+\}

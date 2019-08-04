@@ -28,6 +28,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/vim-js-pretty-template'
 
+  Plug 'ntpeters/vim-better-whitespace'
+
   " Color highlight in CSS
   Plug 'chrisbra/Colorizer'
 
@@ -50,7 +52,7 @@ call plug#end()
 """""""""""""
 " Shortcuts "
 """""""""""""
-" Tab shift back
+" Tatrip_whitespace_on_save=trip_whitespace_on_save=1 shift back
 imap <S-tab> <C-d>
 
 " Toggle NerdTree
@@ -176,7 +178,7 @@ autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vi
 """"""""""""""""""""""""""""
 " 'airblade/vim-gitgutter' "
 """"""""""""""""""""""""""""
-"Preview hunk in Gitgutter
+" Preview hunk in Gitgutter
 "nmap <Leader>hv <Plug>GitGutterPreviewHunk
 
 " Update git signs on save
@@ -222,3 +224,20 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=8
 "Close·Nerdtree·is·no·file·is·open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endifi
 
+""""""""""""""""""""""""""""""""""
+" ntpeters/vim-better-whitespace "
+""""""""""""""""""""""""""""""""""
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
+""""""""""""""""
+" junegunn/fzf "
+""""""""""""""""
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=7 ctermbg=0
+  highlight fzf2 ctermfg=7 ctermbg=0
+  highlight fzf3 ctermfg=7 ctermbg=0
+  setlocal statusline=%#fzf1#\ ⌘\ %#fzf2#fz%#fzf3#f
+endfunction
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
