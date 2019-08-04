@@ -17,10 +17,8 @@ let g:colors_name = 'iceberg'
 
 hi! ColorColumn cterm=NONE ctermbg=235
 hi! CursorColumn cterm=NONE ctermbg=235
-"hi! CursorLine cterm=NONE ctermbg=0
 hi! Comment ctermfg=8
 hi! Constant ctermfg=140
-"hi! Cursor ctermbg=7 ctermfg=1
 hi! CursorLineNr ctermfg=253
 hi! Delimiter ctermfg=252
 hi! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
@@ -31,7 +29,6 @@ hi! Directory ctermfg=109 guifg=#89b8c2
 hi! Error ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
 hi! ErrorMsg ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
 hi! WarningMsg ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
-"hi! EndOfBuffer ctermbg=234 ctermfg=236 guibg=#161821 guifg=#242940
 hi! NonText ctermfg=236 guibg=#161821 guifg=#242940
 hi! SpecialKey ctermbg=234 ctermfg=216 guibg=#161821 guifg=#242940
 hi! Folded ctermbg=235 ctermfg=245 guibg=#1e2132 guifg=#686f9a
@@ -40,9 +37,7 @@ hi! Function ctermfg=110 guifg=#84a0c6
 hi! Identifier cterm=NONE ctermfg=109 guifg=#89b8c2
 hi! Include ctermfg=110 guifg=#84a0c6
 hi! LineNr ctermfg=060 guibg=#1e2132 guifg=#444b71
-"hi! MatchParen ctermbg=237 ctermfg=255 guibg=#3e445e guifg=#ffffff
 hi! MoreMsg ctermfg=150 guifg=#b4be82
-"hi! Normal ctermbg=234 ctermfg=252 guibg=#161821 guifg=#c6c8d1
 hi! Operator ctermfg=110 guifg=#84a0c6
 hi! Pmenu ctermbg=236 ctermfg=251 guibg=#3d425b guifg=#c6c8d1
 hi! PmenuSbar ctermbg=236 guibg=#3d425b
