@@ -22,7 +22,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   Plug 'godlygeek/tabular'
 
-  "Plug 'Quramy/tsuquyomi'
   Plug 'Valloric/YouCompleteMe'
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
