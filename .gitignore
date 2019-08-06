@@ -3,6 +3,12 @@
 
 # But not these files...
 !.gitignore
+!.vimrc
+!.Xresources
+!./.config/i3/config
+!./.config/i3/i3status
+!./.icons/
+
 !init.vim
 !.local/share/nvim/plugged/iceberg.vim/colors/iceberg.vim
 !.local/share/nvim/plugged/iceberg.vim/autoload/airline/themes/iceberg.vim
