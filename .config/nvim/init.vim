@@ -1,3 +1,9 @@
+"
+"\/|\\\
+"
+" File: init.vim
+" Maintainer: shoizz <https://github.com/Shoizz>
+
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'scrooloose/nerdTree'
   Plug 'bling/vim-airline'
@@ -109,7 +115,7 @@ syntax on
 set ruler
 
 " Auto remove trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
 
 " Set edited buffers that aren't visible in a window somewhere
 set hidden

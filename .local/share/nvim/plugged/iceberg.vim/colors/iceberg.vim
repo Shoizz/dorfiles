@@ -1,3 +1,6 @@
+"
+"\/|\\\
+"
 " ICEBERG MINIMAL
 " Maintainer: shoizz <https://github.com/Shoizz>
 " Original work by: cocopon <cocopon@me.com>
@@ -31,8 +34,8 @@ hi! ErrorMsg ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
 hi! WarningMsg ctermbg=234 ctermfg=203 guibg=#161821 guifg=#e27878
 hi! NonText ctermfg=236 guibg=#161821 guifg=#242940
 hi! SpecialKey ctermbg=234 ctermfg=216 guibg=#161821 guifg=#242940
-hi! Folded ctermbg=235 ctermfg=245 guibg=#1e2132 guifg=#686f9a
-hi! FoldColumn ctermbg=235 ctermfg=239 guibg=#1e2132 guifg=#444b71
+hi! Folded ctermbg=0 ctermfg=7
+hi! FoldColumn ctermbg=0 ctermfg=7
 hi! Function ctermfg=110 guifg=#84a0c6
 hi! Identifier cterm=NONE ctermfg=109 guifg=#89b8c2
 hi! Include ctermfg=110 guifg=#84a0c6
@@ -57,7 +60,7 @@ hi! SpellRare ctermbg=97 ctermfg=252 gui=undercurl guisp=#a093c7
 hi! Statement ctermfg=110 gui=NONE guifg=#84a0c6
 hi! StatusLine cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
 hi! StatusLineTerm cterm=reverse ctermbg=234 ctermfg=4 gui=reverse guibg=#17171b guifg=#818596 term=reverse
-hi! StatusLineNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
+hi! StatusLineNC cterm=reverse ctermfg=4
 hi! StatusLineTermNC cterm=reverse ctermbg=238 ctermfg=4 gui=reverse guibg=#3e445e guifg=#0f1117
 hi! StorageClass ctermfg=110 guifg=#84a0c6
 hi! String ctermfg=109 guifg=#89b8c2
@@ -99,6 +102,7 @@ hi! ZenSpace ctermbg=203 guibg=#e27878
 hi! icebergALAccentRed ctermfg=203 guifg=#e27878
 hi! Pmenu ctermbg=0 ctermfg=7
 hi! PmenuSel ctermbg=60 ctermfg=7
+" Matching brackets highlight
 hi! MatchParen cterm=none ctermbg=60 ctermfg=7
 
 hi! link cssBraces Delimiter
