@@ -54,12 +54,13 @@ call plug#end()
 " 2. Search symbol occurrence
   " Use :Ggrep <...> to search for words and :cnext :cprevious to navigate search results
 
+" 3.Two solutions for updating nerdTree when file are deleted:
+"   a. Use nerdtree to delete the dir - i.e. go to the node and hit md
+"   b. Delete the dir with !rm ... and then hit R in the nerdtree to refresh the tree
+
 """""""""""""
 " Shortcuts "
 """""""""""""
-" Tatrip_whitespace_on_save=trip_whitespace_on_save=1 shift back
-imap <S-tab> <C-d>
-
 " Toggle NerdTree
 nmap <C-n> :NERDTreeToggle<CR>
 
