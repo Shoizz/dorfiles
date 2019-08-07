@@ -61,6 +61,9 @@ call plug#end()
 """""""""""""
 " Shortcuts "
 """""""""""""
+"Shift back
+"<C-d>
+
 " Toggle NerdTree
 nmap <C-n> :NERDTreeToggle<CR>
 
