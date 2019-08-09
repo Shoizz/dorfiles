@@ -48,15 +48,23 @@ call plug#end()
 " Hints "
 """""""""
 " 1. Search and replace
-  " – To serch and replace use :%s/wordtosearch/wordtoreplace/gc
-  " – To search and replace multiple occurrences use :%s/Kang\\|Kodos/alien/gc
+"   a. To serch and replace use :%s/wordtosearch/wordtoreplace/gc
+"   b. To search and replace multiple occurrences use :%s/Kang\\|Kodos/alien/gc
 
 " 2. Search symbol occurrence
-  " Use :Ggrep <...> to search for words and :cnext :cprevious to navigate search results
+"   Use :Ggrep <...> to search for words and :cnext :cprevious to navigate search results
 
 " 3.Two solutions for updating nerdTree when file are deleted:
 "   a. Use nerdtree to delete the dir - i.e. go to the node and hit md
 "   b. Delete the dir with !rm ... and then hit R in the nerdtree to refresh the tree
+
+" 4. Quit all buffers
+"   a. Save and quit :wqa
+"   b. Just quit :qa
+
+" 5. Reload
+"   a. Windows :windo e
+"   b. Buffers :bufdo e
 
 """""""""""""
 " Shortcuts "
@@ -68,7 +76,10 @@ call plug#end()
 nmap <C-n> :NERDTreeToggle<CR>
 
 " Toggle mouse
-nmap <C-a> :call FoldColumnToggle()<cr>
+" nmap <C-a> :call MouseToggle()<cr>
+
+" Reload window
+nmap <C-a> :windo e<CR>
 
 " runoshun/tscompletejob
 nmap <C-d> :YcmCompleter GoToDefinition <CR>
@@ -136,19 +147,19 @@ autocmd BufWinLeave * call clearmatches()
 set cursorline
 
 " Toggle mouse
-let g:togglemouse=1
-set mouse=""
-function! FoldColumnToggle()
-    if g:togglemouse
-        set mouse=""
-        let g:togglemouse=0
-        echo "Mouse disabled"
-    else
-        set mouse=a
-        let g:togglemouse=1
-        echo "Mouse enabled"
-    endif
-endfunction
+"let g:togglemouse=1
+"set mouse=""
+"function! MouseToggle()
+"    if g:togglemouse
+"        set mouse=""
+"        let g:togglemouse=0
+"        echo "Mouse disabled"
+"    else
+"        set mouse=a
+"        let g:togglemouse=1
+"        echo "Mouse enabled"
+"    endif
+"endfunction
 
 " Fxing backspace for mac
 set backspace=2
