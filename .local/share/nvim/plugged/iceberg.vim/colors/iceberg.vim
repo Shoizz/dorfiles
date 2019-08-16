@@ -103,7 +103,8 @@ hi! icebergALAccentRed ctermfg=203 guifg=#e27878
 hi! Pmenu ctermbg=0 ctermfg=7
 hi! PmenuSel ctermbg=60 ctermfg=7
 " Matching brackets highlight
-hi! MatchParen cterm=none ctermbg=60 ctermfg=7
+hi! MatchParen cterm=none ctermbg=0
+hi! MatchTag cterm=underline
 
 hi! link cssBraces Delimiter
 hi! link cssClassName Special
