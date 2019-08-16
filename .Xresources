@@ -39,4 +39,12 @@ Xcursor.size: 32
 *.color7:       #c6c8d1
 *.color15:      #d2d4de
 
-URxvt*font: xft:Terminus:size=10
+URxvt*font: xft:IBMPlexMono:size=11
+URxvt*scrollBar:		false
+URxvt.termName: rxvt-unicode-256color
+!URxvt*perl-lib:			/usr/lib/urxvt/perl
+URxvt*urlLauncher:		/usr/bin/chromium
+URxvt*cursorUnderline: 0
+URxvt*fadeColor: 		#000000
+URxvt*cursorBlink:		true
+
