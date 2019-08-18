@@ -19,7 +19,7 @@ endif
 let g:colors_name = 'iceberg'
 
 hi! ColorColumn cterm=NONE ctermbg=235
-hi! CursorColumn cterm=NONE ctermbg=235
+"hi! CursorColumn cterm=NONE ctermbg=235
 hi! Comment ctermfg=8
 hi! Constant ctermfg=140
 hi! CursorLineNr ctermfg=253
