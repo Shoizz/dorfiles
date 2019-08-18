@@ -38,6 +38,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Color highlight in CSS
   Plug 'chrisbra/Colorizer'
 
+  " Highlight open and closed html tags
+  Plug 'Valloric/MatchTagAlways'
+
   " Line indentation
   Plug 'nathanaelkane/vim-indent-guides'
   "Plug 'Yggdroot/indentLine'
@@ -54,7 +57,7 @@ call plug#end()
 " 2. Search symbol occurrence
 "   Use :Ggrep <...> to search for words and :cnext :cprevious to navigate search results
 
-" 3.Two solutions for updating nerdTree when file are deleted:
+" 3. Two solutions for updating nerdTree when file are deleted:
 "   a. Use nerdtree to delete the dir - i.e. go to the node and hit md
 "   b. Delete the dir with !rm ... and then hit R in the nerdtree to refresh the tree
 
@@ -65,6 +68,9 @@ call plug#end()
 " 5. Reload
 "   a. Windows :windo e
 "   b. Buffers :bufdo e
+
+" 6. Renaming file
+"   :Gwrite to add file to repo, :Gmove filepath/newfilename
 
 """""""""""""
 " Shortcuts "
@@ -111,6 +117,9 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" Auto closing html tags with space
+inoremap <C-q> </<C-X><C-O>
+
 """"""""""""""""
 " Theme config "
 """"""""""""""""
@@ -119,6 +128,11 @@ colorscheme iceberg
 """""""""""""""""
 " Common config "
 """""""""""""""""
+set lazyredraw
+
+set wrap linebreak nolist
+set breakindent
+
 " More frequent updates for, e.g. signs. If not updating - set manually to
 " lower value e.g. :set updatetime = N-100
 set updatetime=300
@@ -131,6 +145,15 @@ set ruler
 
 " Auto remove trailing whitespaces
 "autocmd BufWritePre * :%s/\s\+$//e
+
+" Autoclosing brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " Set edited buffers that aren't visible in a window somewhere
 set hidden
@@ -185,6 +208,10 @@ set shiftwidth=2
 """"""""""""""""""""""""""
 " Disable doc preview
 set completeopt-=preview
+
+let g:mta_use_matchparen_group = 0
+let g:mta_set_default_matchtag_color = 0
+
 
 """""""""""""""""""""""""""""""""
 " Quramy/vim-js-pretty-template "
