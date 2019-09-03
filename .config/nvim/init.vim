@@ -72,6 +72,12 @@ call plug#end()
 " 6. Renaming file
 "   :Gwrite to add file to repo, :Gmove filepath/newfilename
 
+" 7. Copy from one register to enother
+"   "+yy "+p
+
+" 8. Deleting word
+"   dw
+
 """""""""""""
 " Shortcuts "
 """""""""""""
@@ -96,6 +102,8 @@ nmap <C-f> :YcmCompleter GoToReferences <CR>
 map <silent><C-o> :GitGutterPreviewHunk <CR>
 " Undo and hide partial diff
 map <silent><C-x> :GitGutterUndoHunk <bar> :pclose <CR>
+map <silent><C-t> :GitGutterPrevHunk <CR>
+map <silent><C-y> :GitGutterNextHunk <CR>
 
 " Moving lines up and down
 nnoremap <C-j> :m .+1<CR>==
@@ -117,8 +125,8 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-" Auto closing html tags with space
-inoremap <C-q> </<C-X><C-O>
+" Auto closing html tags
+" noremap <C-q> </<C-X><C-O>
 
 """"""""""""""""
 " Theme config "
@@ -142,6 +150,11 @@ set number
 set numberwidth=2
 syntax on
 set ruler
+
+" Auto intending
+filetype indent on
+set filetype=html
+set smartindent
 
 " Auto remove trailing whitespaces
 "autocmd BufWritePre * :%s/\s\+$//e
