@@ -127,6 +127,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# setting defaults for floating windows
+floating_minimum_size 75 x 50
+floating_maximum_size 75 x 50
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -174,11 +177,19 @@ new_window 1pixel
 #######
 #THEME#
 #######
+# The ~/.Xresources should contain a line such as
+#     *color0: #121212
+# and must be loaded properly, e.g., by using
+#     xrdb ~/.Xresources
+# This value is picked up on by other applications (e.g., the URxvt terminal
+# emulator) and can be used in i3 like this:
+set_from_resource $foreground i3wm.foreground #c6c8d1
+set_from_resource $background i3wm.background #161821
+
 #set common background
-exec xsetroot -solid '#20262B'
+exec xsetroot -solid '#161821'
 
 # set primary gruvbox colorscheme colors
-set $bg #20262B
 set $red #cc241d
 set $green #98971a
 set $yellow #A2AFBC
@@ -199,17 +210,17 @@ bar {
     status_command i3status --config ~/.config/i3/i3status
     position top
     colors {
-        separator $bg
+        separator $background
         # bar background color
-        background $bg
+        background $background
         # text color used for blocks that do not have a color specified.
         statusline $yellow
         # workspaces section
         #                    border  backgr. text
-        focused_workspace    $bg $bg $aqua
-        inactive_workspace   $bg $bg $yellow
-        active_workspace     $bg $darkgray $yellow
-        urgent_workspace     $red $red $bg
+        focused_workspace    $background $background $aqua
+        inactive_workspace   $background $background $yellow
+        active_workspace     $background $darkgray $yellow
+        urgent_workspace     $red $red $background
     }
 }
 #end of bar section
@@ -225,9 +236,9 @@ bar {
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $bg $bg $yellow $purple $darkgray
-client.focused_inactive $bg $bg $yellow $purple $darkgray
-client.unfocused        $bg $bg $yellow $purple $darkgray
+client.focused          $background $background $yellow $purple $darkgray
+client.focused_inactive $background $background $yellow $purple $darkgray
+client.unfocused        $background $background $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
 #end of window title bars & borders section

@@ -3,12 +3,12 @@ Xcursor.theme: DMZ-Black
 Xcursor.size: 32
 
 ! special
-*.foreground:   #d2d4de
+*.foreground:   #c6c8d1
 *.background:   #161821
-*.cursorColor:  #d2d4de
+!*.cursorColor:  #8700af
 
 ! black
-*.color0:       #161821
+*.color0:       #212330
 *.color8:       #6b7089
 
 ! red
@@ -20,7 +20,7 @@ Xcursor.size: 32
 *.color10:      #c0ca8e
 
 ! yellow
-*.color3:       #e2a478
+*.color3:       #d8a77e
 *.color11:      #e9b189
 
 ! blue
@@ -39,7 +39,7 @@ Xcursor.size: 32
 *.color7:       #c6c8d1
 *.color15:      #d2d4de
 
-URxvt*font: xft:IBMPlexMono:size=11
+URxvt*font: xft:RobotoMono Nerd Font Mono:size=11
 URxvt*scrollBar:		false
 URxvt.termName: rxvt-unicode-256color
 !URxvt*perl-lib:			/usr/lib/urxvt/perl
@@ -47,4 +47,10 @@ URxvt*urlLauncher:		/usr/bin/chromium
 URxvt*cursorUnderline: 0
 URxvt*fadeColor: 		#000000
 URxvt*cursorBlink:		true
+! Use the specified colour for the cursor. The default is to use the foreground colour; option -cr.
+URxvt*cursorColor: #8700af
 
+! Use the specified colour for the colour of the cursor text. For this to take effect, cursorColor must also be specified. The default is to use the
+URxvt*cursorColor2: #c6c8d1
+
+URxvt.lineSpace: 6
