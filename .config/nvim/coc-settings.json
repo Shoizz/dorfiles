@@ -1,9 +1,13 @@
 {
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 50,
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx"],
+  //"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+  "diagnostic.messageTarget": "echo",
+  "suggest.floatEnable": false,
+  "signature.target": "echo",
+  "coc.preferences.hoverTarget": "echo",
 }
 

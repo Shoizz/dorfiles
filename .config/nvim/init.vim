@@ -8,11 +8,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'scrooloose/nerdTree'
   Plug 'bling/vim-airline'
   Plug 'cocopon/iceberg.vim'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-  Plug 'mattn/emmet-vim'
+  "Plug 'mattn/emmet-vim'
   Plug 'tpope/vim-surround'
-  Plug 'enricobacis/vim-airline-clock'
 
   " Git
   Plug 'tpope/vim-fugitive'
@@ -20,19 +19,20 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
 
   " asynchronous execution library for Vim
-  Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+  "Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
   " Serching files
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 
-  Plug 'godlygeek/tabular'
+  "Plug 'godlygeek/tabular'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/jsonc.vim'
   "Plug 'Valloric/YouCompleteMe'
   Plug 'pangloss/vim-javascript'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'Quramy/vim-js-pretty-template'
+  "Plug 'leafgarland/typescript-vim'
+  "Plug 'Quramy/vim-js-pretty-template'
 
   Plug 'ntpeters/vim-better-whitespace'
 
@@ -43,7 +43,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Valloric/MatchTagAlways'
 
   " Line indentation
-  Plug 'nathanaelkane/vim-indent-guides'
+  "Plug 'nathanaelkane/vim-indent-guides'
   "Plug 'Yggdroot/indentLine'
 
 call plug#end()
@@ -107,12 +107,12 @@ map <silent><C-t> :GitGutterPrevHunk <CR>
 map <silent><C-y> :GitGutterNextHunk <CR>
 
 " Moving lines up and down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <C-k> :m .+1<CR>==
+nnoremap <C-j> :m .-2<CR>==
+inoremap <C-k> <Esc>:m .+1<CR>==gi
+inoremap <C-j> <Esc>:m .-2<CR>==gi
+vnoremap <C-k> :m '>+1<CR>gv=gv
+vnoremap <C-j> :m '<-2<CR>gv=gv
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
@@ -142,6 +142,9 @@ set lazyredraw
 set wrap linebreak nolist
 set breakindent
 
+" Automatically refresh any files that haven't been edited by Vim
+set autoread
+
 " More frequent updates for, e.g. signs. If not updating - set manually to
 " lower value e.g. :set updatetime = N-100
 set updatetime=300
@@ -156,9 +159,6 @@ set ruler
 filetype indent on
 set filetype=html
 set smartindent
-
-" Auto remove trailing whitespaces
-"autocmd BufWritePre * :%s/\s\+$//e
 
 " Autoclosing brackets
 inoremap " ""<left>
@@ -182,21 +182,6 @@ autocmd BufWinLeave * call clearmatches()
 
 " Enable cursor
 set cursorline
-
-" Toggle mouse
-"let g:togglemouse=1
-"set mouse=""
-"function! MouseToggle()
-"    if g:togglemouse
-"        set mouse=""
-"        let g:togglemouse=0
-"        echo "Mouse disabled"
-"    else
-"        set mouse=a
-"        let g:togglemouse=1
-"        echo "Mouse enabled"
-"    endif
-"endfunction
 
 " Fxing backspace for mac
 set backspace=2
@@ -229,9 +214,6 @@ set nowritebackup
 
 " Better display for messages
 set cmdheight=1
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -354,11 +336,11 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 """""""""""""""""""""""""""""""""
 " Quramy/vim-js-pretty-template "
 """""""""""""""""""""""""""""""""
-call jspretmpl#register_tag('gql', 'typescript')
-autocmd FileType javascript JsPreTmpl
-autocmd FileType typescript syn clear foldBraces
-autocmd FileType typescript JsPreTmpl
-autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vim users only
+"call jspretmpl#register_tag('gql', 'typescript')
+"autocmd FileType javascript JsPreTmpl
+"autocmd FileType typescript syn clear foldBraces
+"autocmd FileType typescript JsPreTmpl
+"autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vim users only
 
 """"""""""""""""""""""""""""
 " 'airblade/vim-gitgutter' "
@@ -368,32 +350,33 @@ autocmd FileType typescript syn clear foldBraces " For leafgarland/typescript-vi
 
 " Update git signs on save
 autocmd BufWritePost * GitGutter
+
 let g:gitgutter_max_signs = 1500
+
+let g:gitgutter_preview_win_floating = 0
 
 """"""""""""""""""""""""
 " 'tpope/vim-fugitive' "
 """"""""""""""""""""""""
 set diffopt+=vertical
 
-"""""""""""""""""""""""""""""""""
-" enricobacis/vim-airline-clock "
-"""""""""""""""""""""""""""""""""
-let g:airline#extensions#clock#format = '┆ %H:%M'
+" Showing list of search results when :Ggrep
+autocmd QuickFixCmdPost *grep* cwindow
 
 """"""""""""""""""""""""""""""
 " leafgarland/typescript-vim "
 """"""""""""""""""""""""""""""
-let g:typescript_compiler_binary = 'tsc'
-let g:typescript_compiler_options = ''
-autocmd FileType typescript :set makeprg=tsc
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+"let g:typescript_compiler_binary = 'tsc'
+"let g:typescript_compiler_options = ''
+"autocmd FileType typescript :set makeprg=tsc
+"autocmd QuickFixCmdPost [^l]* nested cwindow
+"autocmd QuickFixCmdPost    l* nested lwindow
 
 """""""""""""""""""""""
 " Yggdroot/indentLine "
 """""""""""""""""""""""
 "indentLine will overwrite 'conceal' color with grey by default. If you want
-"to highlight conceal color with your colorscheme, disable by:
+          "to highlight conceal color with your colorscheme, disable by:
 "let g:indentLine_setColors = 0
 "let g:indentLine_color_term = 8
 "let g:indentLine_char = '⋮'
@@ -404,16 +387,17 @@ autocmd QuickFixCmdPost    l* nested lwindow
 """""""""""""""""""""""""""""""""""
 " nathanaelkane/vim-indent-guides "
 """""""""""""""""""""""""""""""""""
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0 ctermfg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermfg=8
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_auto_colors = 0
 
 """""""""""""""""""""""
 " scrooloose/nerdTree "
 """""""""""""""""""""""
-"Close·Nerdtree·is·no·file·is·open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endifi
+" Close·Nerdtree·is·no·file·is·open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Hide help
+let NERDTreeMinimalUI=1
 
 """"""""""""""""""""""""""""""""""
 " ntpeters/vim-better-whitespace "
