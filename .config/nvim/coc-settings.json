@@ -9,5 +9,6 @@
   "suggest.floatEnable": false,
   "signature.target": "echo",
   "coc.preferences.hoverTarget": "echo",
+  "coc.preferences.colorSupport": true,
 }
 

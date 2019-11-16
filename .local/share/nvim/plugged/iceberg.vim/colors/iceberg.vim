@@ -23,6 +23,11 @@ hi! ColorColumn cterm=NONE ctermbg=235
 hi! Comment ctermfg=8
 hi! Constant ctermfg=140
 hi! CursorLineNr ctermfg=253
+hi! CocErrorHighlight ctermfg=124
+hi! CocHoverRange ctermbg=053
+hi! CocHintLine ctermbg=053
+hi! CocCursorRange ctermbg=053
+hi! CocCodeLens ctermbg=053
 hi! Delimiter ctermfg=252
 hi! DiffAdd ctermbg=29 ctermfg=158 guibg=#45493e guifg=#c0c5b9
 hi! DiffChange ctermbg=23 ctermfg=159 guibg=#384851 guifg=#b3c3cc
